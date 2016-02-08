@@ -64,7 +64,7 @@ module.exports = React.createClass({
     },
 
     updateStatics () {
-        var total = this.props.children.length;
+        var total = this.props.children.size;
         this.wrapperSize = this.itemsWrapper.clientWidth;
         this.itemSize = outerWidth(this.thumb0);
         this.visibleItems = Math.floor(this.wrapperSize / this.itemSize);   
@@ -184,8 +184,8 @@ module.exports = React.createClass({
                 img = item.props.children.filter((children) => children.type === "img")[0];   
             }
 
-            if (img.length) {
-                console.log(img, img.length, "No images found! Can't build the thumb list");
+            if (img.size) {
+                console.log(img, img.size, "No images found! Can't build the thumb list");
             }
             
             return (
@@ -198,7 +198,7 @@ module.exports = React.createClass({
     },
 
     render () {
-        if (this.props.children.length === 0) {
+        if (this.props.children.size === 0) {
             return null;
         }
 
